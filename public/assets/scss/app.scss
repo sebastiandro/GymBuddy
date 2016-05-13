@@ -9,3 +9,48 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+// # Buttons
+
+.find-buddy-btn {
+    /* Rectangle 1: */
+  background-image: linear-gradient(-180deg, #EA8D8D 0%, #CF5555 100%);
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.31);
+  border-radius: 3px;
+  border: 1px solid #D05757;
+  font-family: ProximaNova-Bold;
+  font-size: 19.62px;
+  color: #FFFFFF;
+  text-shadow: 0px −1px 1px rgba(0,0,0,0.21);
+  width:311px;
+  height: 60px;
+  font-size: 19.62px;
+  outline: none;
+  color: #FFFFFF;
+
+  &:active, &:hover, &:visited {
+    outline:none;
+  }
+
+
+  &:hover {
+      color:#fff;
+      outline: none;
+      background-image: -webkit-linear-gradient(-180deg, #CF55550 0%, #EA8D8D 100%);
+      background-image: -o-linear-gradient(-180deg, #CF55550 0%, #EA8D8D 100%);
+      background-image: linear-gradient(-180deg,#CF55550 0%, #EA8D8D 100%);
+    }
+
+
+
+}
+
+button.btn:hover, button.btn:active {
+  outline:none;
+}
+
+.centered {
+  margin: 0 auto;
+  float:none;
+  display:block;
+}
