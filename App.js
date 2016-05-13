@@ -1,23 +1,44 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-class App extends React.Component {
+let Mixin = InnerComponent => class extends React.Component {
   constructor() {
     super();
-    this.state = {
-      txt: 'This is the state text',
-      cat: 0
-    }
+    this.update = this.update.bind(this);
+    this.state = {val: 0}
   }
-  update(e) {
-    this.setState({txt: e.target.value})
+  update() {
+    this.setState({val: this.state.val + 1})
   }
+  componentWillMount() {
+    console.log('will mount');
+  }
+
+render() {
+  return <InnerComponent update={this.update}
+    {...this.state}
+    {...this.props} />
+  }
+
+  componentDidMount() {
+    console.log('mounted ');
+  }
+}
+
+const Button = (props) => <button onClick={props.update}>{props.txt} - {props.val}</button>
+const Label = (props) => <label onMouseMove={props.update}>{props.txt} - {props.val}</label>
+let ButtonMixed = Mixin(Button);
+let LabelMixed = Mixin(Label);
+
+
+class App extends React.Component {
   render() {
     return (
       <div>
-        <input type="text" onChange={this.update.bind(this)}/>
-        <h1>{this.state.txt}</h1>
+        <ButtonMixed txt="Button" />
+        <LabelMixed txt="Label" />
       </div>
-  );
+    )
   }
 }
 
