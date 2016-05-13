@@ -1,11 +1,12 @@
 module.exports = {
-  entry: './main.js',
+  entry: './app/App.js',
   output: {
-    path: './',
-    filename: 'index.js'
+    path: './public/',
+    filename: 'index.js',
   },
   devServer: {
     inline: true,
+    contentBase: './public/',
     port: 3333
   },
   module: {
@@ -22,6 +23,10 @@ module.exports = {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
       },
+      {
+        test: /\.jpg$/,
+        loader: "file?name=[path][name].[ext]"
+      }
   ]
   }
 }
