@@ -1,26 +1,42 @@
 import React, { PropTypes } from 'react';
 import GymsNearby from './GymsNearby';
-import { Router } from 'react-router';
+import { Router, withRouter } from 'react-router';
 
-class FindGym extends React.Component {
 
-  construct() {
-    this.super()
+const FindGym = withRouter(
+  React.createClass({
+    construct: function() {
+      this.super()
+    },
+    getInitialState: function() {
+      return {
+        lat: 0,
+        lng: 0
+      };
+    },
+    getGeoLocation: function() {
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.showPosition)
+      }
+    },
+    showPosition: function(position) {
+      this.setState({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      });
+    },
+    componentDidMount: function() {
+      this.getGeoLocation();
+    },
+    render: function() {
+      return (
+        <div>
+          <p className="info">Looking for gyms...</p>
+          <GymsNearby lat={this.state.lat} lng={this.state.lng} />
+        </div>
+      )
+    }
+  })
+)
 
-    this.setState({
-      gyms: [{name: "abc"}]
-    });
-
-  }
-
-  render () {
-    return (
-      <div>
-        <p className="info">Looking for gyms...</p>
-
-      </div>
-    )
-  }
-}
-
-export default FindGym;
+export default FindGym
