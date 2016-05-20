@@ -10,6 +10,10 @@ body {
   background-repeat: no-repeat;
 }
 
+p {
+  font-weight:300;
+}
+
 // # Buttons
 
 .find-buddy-btn {
@@ -18,10 +22,9 @@ body {
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.31);
   border-radius: 3px;
   border: 1px solid #D05757;
-  font-family: ProximaNova-Bold;
   font-size: 19.62px;
   color: #FFFFFF;
-  text-shadow: 0px −1px 1px rgba(0,0,0,0.21);
+  text-shadow: 0 −1px 1px rgba(0,0,0,0.21);
   width:311px;
   height: 60px;
   font-size: 19.62px;
@@ -40,8 +43,63 @@ body {
       background-image: -o-linear-gradient(-180deg, #CF55550 0%, #EA8D8D 100%);
       background-image: linear-gradient(-180deg,#CF55550 0%, #EA8D8D 100%);
     }
+}
 
+// start
 
+.blue-box {
+  /* Box BG: */
+  margin-top: 175px;
+  background: rgba(73,143,225,0.86);
+  border-bottom:5px solid rgba(50,113,186,0.86);
+  max-width:600px;
+  margin:12% auto 0;
+  float: none;
+  padding:40px 55px 57px;
+
+  h1 {
+    margin-top: 0;
+  }
+  .description {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+}
+
+.btn-bg-wrap {
+  background: rgba(0,0,0,.3);
+  width: 199px;
+  margin: 0 auto;
+}
+
+.btn-outline {
+  width: 200px;
+  background: #4C86CE;
+  border: 3px solid rgba(97, 151, 218, 0.94);
+  border-radius: 0;
+  /* BTN: */
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  top:-1px;
+
+  -webkit-transition: top 200ms;
+  -moz-transition: top 200ms;
+  -ms-transition: top 200ms;
+  -o-transition: top 200ms;
+  transition: top 200ms;
+
+  &:hover {
+    top:-3px;
+    color:#fff;
+  }
+  
+  &:active, &:visited {
+    color: #fff;
+    box-shadow: none;
+    outline:none;
+  }
 
 }
 

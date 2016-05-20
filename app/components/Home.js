@@ -25,11 +25,13 @@ const Home = withRouter(
 
       render: function(){
         return (
-          <div className="homeView col-md-8 col-md-offset-2">
-            <h2 className="text-center">GymBuddy helps you find friends.</h2>
-            <h3 className="text-center">Find friends who go to the same gym as you. And then you can hit on something.
-    But Jesus Crust please do not stalk them or anything like that</h3>
-            <button onClick={() => this.handleSubmit()} className="centered find-buddy-btn">Find me a GymBuddy!</button>
+          <div className="homeView blue-box col-md-6 col-md-offset-3">
+            <h2 className="text-center">Find a spotter with</h2>
+            <h1 className="text-center">Gymbuddy</h1>
+            <p className="description">We believe “work” and “fun” can get along, afterall. So we'll make sure the experience you have with.</p>
+            <div className="btn-bg-wrap">
+                <button onClick={() => this.handleSubmit()} className="centered btn btn-outline">Find me a GymBuddy!</button>
+            </div>
           </div>
         )
       }
